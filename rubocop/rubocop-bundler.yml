@@ -1,0 +1,58 @@
+####################################################
+# https://docs.rubocop.org/rubocop/cops_bundler.html
+
+# Autocorrect: no
+# Safe: yes
+Bundler/DuplicatedGem:
+  Description: 'Checks for duplicate gem entries in Gemfile.'
+  Enabled: true
+  VersionAdded: '0.46'
+  Include:
+    - '**/*.gemfile'
+    - '**/Gemfile'
+    - '**/gems.rb'
+
+# Autocorrect: no
+# Safe: yes
+Bundler/GemComment:
+  Description: 'Add a comment describing each gem.'
+  Enabled: false
+  VersionAdded: '0.59'
+  VersionChanged: '0.85'
+  Include:
+    - '**/*.gemfile'
+    - '**/Gemfile'
+    - '**/gems.rb'
+  IgnoredGems: []
+  OnlyFor: []
+
+# Autocorrect: yes
+# Safe: yes
+Bundler/InsecureProtocolSource:
+  Description: >-
+                 The source `:gemcutter`, `:rubygems` and `:rubyforge` are deprecated
+                 because HTTP requests are insecure. Please change your source to
+                 'https://rubygems.org' if possible, or 'http://rubygems.org' if not.
+  Enabled: true
+  VersionAdded: '0.50'
+  Include:
+    - '**/*.gemfile'
+    - '**/Gemfile'
+    - '**/gems.rb'
+
+# Autocorrect: yes
+# Safe: yes
+Bundler/OrderedGems:
+  Description: >-
+                 Gems within groups in the Gemfile should be alphabetically sorted.
+  Enabled: true
+  VersionAdded: '0.46'
+  VersionChanged: '0.47'
+  TreatCommentsAsGroupSeparators: true
+  # By default, "-" and "_" are ignored for order purposes.
+  # This can be overridden by setting this parameter to true.
+  ConsiderPunctuation: false
+  Include:
+    - '**/*.gemfile'
+    - '**/Gemfile'
+    - '**/gems.rb'

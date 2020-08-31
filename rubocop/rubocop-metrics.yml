@@ -1,0 +1,46 @@
+####################################################
+# https://docs.rubocop.org/rubocop/cops_metrics.html
+
+Metrics/AbcSize:
+  Enabled: true
+
+Metrics/BlockLength:
+  Enabled: true
+  Exclude:
+    - 'spec/**/*_spec.rb'
+
+Metrics/BlockNesting:
+  Description: Avoid excessive block nesting
+  StyleGuide: https://github.com/rubocop-hq/ruby-style-guide#three-is-the-number-thou-shalt-count
+  Enabled: true
+  Max: 3
+
+# We are not perfect robot-humans
+Metrics/ClassLength:
+  Enabled: true
+  Max: 200
+
+Metrics/CyclomaticComplexity:
+  Description: A complexity metric that is strongly correlated to the number of test
+    cases needed to validate a method.
+  Enabled: true
+
+Metrics/MethodLength:
+  Enabled: true
+
+Metrics/ModuleLength:
+  Description: Avoid modules longer than 200 lines of code.
+  Enabled: true
+  CountComments: false
+  Max: 200
+
+Metrics/ParameterLists:
+  Description: Avoid parameter lists longer than three or four parameters.
+  StyleGuide: https://github.com/rubocop-hq/ruby-style-guide#too-many-params
+  Enabled: true
+  Max: 5
+  CountKeywordArgs: true
+
+Metrics/PerceivedComplexity:
+  Description: A complexity metric geared towards measuring complexity for a human reader.
+  Enabled: true

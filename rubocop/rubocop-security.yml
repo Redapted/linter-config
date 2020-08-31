@@ -1,0 +1,19 @@
+####################################################
+# https://docs.rubocop.org/rubocop/cops_security.html
+
+Security/Eval:
+  Description: The use of eval represents a serious security risk.
+  Enabled: true
+
+Security/JSONLoad:
+  Enabled: true
+
+Security/MarshalLoad:
+  Enabled: true
+
+Security/Open:
+  Description: 'The use of Kernel#open represents a serious security risk.'
+  Enabled: true
+
+Security/YAMLLoad:
+  Enabled: true
